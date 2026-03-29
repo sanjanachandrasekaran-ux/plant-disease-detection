@@ -167,4 +167,4 @@ st.markdown("---")
 st.markdown("### 📘 About Project")
 st.write("This AI system detects plant diseases using CNN and provides treatment suggestions.")
 
-st.markdown("### 👩‍💻 Developed by Sanju")
+st.markdown("### 👩‍💻 Developed by Sanjana , Sudha")
