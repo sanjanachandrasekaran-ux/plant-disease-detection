@@ -7,23 +7,23 @@ import os
 import gdown
 
 # -------------------------------
-# Download model from Google Drive
+# Download model
 # -------------------------------
 file_id = "1Deg-sxG1v2Ezi48C5RkRFamyM-KnNYzl"
 model_path = "plant_disease_model.h5"
 
 if not os.path.exists(model_path):
-    with st.spinner("Downloading model... please wait ⏳"):
+    with st.spinner("Downloading model... ⏳"):
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, model_path, quiet=False)
 
 # -------------------------------
-# Load trained model
+# Load model
 # -------------------------------
 model = load_model(model_path)
 
 # -------------------------------
-# Load treatment data
+# Load JSON
 # -------------------------------
 with open('treatments.json', 'r') as f:
     treatments = json.load(f)
@@ -31,38 +31,45 @@ with open('treatments.json', 'r') as f:
 class_names = list(treatments.keys())
 
 # -------------------------------
-# Streamlit UI
+# UI Title
 # -------------------------------
 st.markdown("<h1 style='text-align: center; color: green;'>🌱 Plant Disease Detection</h1>", unsafe_allow_html=True)
 
-st.write("Upload a plant leaf image to detect disease and get treatment suggestions.")
+st.write("Upload or capture a plant leaf image to detect disease.")
 
-# 🌐 Language selector
-language = st.selectbox("🌐 Select Language", ["English", "Tamil"])
+# -------------------------------
+# 🌟 TOGGLES
+# -------------------------------
+use_camera = st.toggle("📸 Use Camera")
+use_tamil = st.toggle("🌐 Enable Tamil Language")
+show_confidence = st.toggle("🔍 Show Confidence")
 
-# Upload + Camera
-uploaded_file = st.file_uploader("📤 Upload a leaf image", type=["jpg", "png", "jpeg"])
-camera_image = st.camera_input("📸 Or take a photo")
-
-# Decide which image to use
+# -------------------------------
+# Image Input Logic
+# -------------------------------
 image = None
-if uploaded_file is not None:
-    image = uploaded_file
-elif camera_image is not None:
-    image = camera_image
+
+if use_camera:
+    camera_image = st.camera_input("Take a photo")
+    if camera_image is not None:
+        image = camera_image
+else:
+    uploaded_file = st.file_uploader("Upload image", type=["jpg", "png", "jpeg"])
+    if uploaded_file is not None:
+        image = uploaded_file
 
 # -------------------------------
 # Prediction
 # -------------------------------
 if image is not None:
     img = Image.open(image)
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    st.image(img, caption="Input Image", use_column_width=True)
 
     img = img.resize((128, 128))
     img_array = np.array(img) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
 
-    with st.spinner("Analyzing leaf... 🌿"):
+    with st.spinner("Analyzing... 🌿"):
         prediction = model.predict(img_array)
         class_index = np.argmax(prediction)
         disease = class_names[class_index]
@@ -70,23 +77,27 @@ if image is not None:
 
     clean_name = disease.replace("_", " ")
 
-    # Tamil label (optional)
-    if language == "Tamil":
+    # Tamil label
+    if use_tamil:
         clean_name = "நோய்: " + clean_name
 
-    st.subheader(f"🦠 Predicted Disease: {clean_name}")
-    st.info(f"🔍 Confidence: {confidence:.2f}%")
+    st.subheader(f"🦠 {clean_name}")
+
+    # Confidence toggle
+    if show_confidence:
+        st.info(f"🔍 Confidence: {confidence:.2f}%")
 
     if confidence < 70:
-        st.warning("⚠️ Prediction confidence is low. Try another image.")
+        st.warning("⚠️ Low confidence. Try another image.")
 
+    # Healthy / Diseased
     if "healthy" in disease.lower():
         st.success("✅ Plant is Healthy")
     else:
         st.error("❌ Plant is Diseased")
 
-    # Language logic
-    lang_code = "en" if language == "English" else "ta"
+    # Language selection
+    lang_code = "ta" if use_tamil else "en"
 
     st.success(f"💊 Treatment: {treatments[disease]['treatment'][lang_code]}")
     st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer'][lang_code]}")
@@ -95,4 +106,4 @@ if image is not None:
 # Footer
 # -------------------------------
 st.markdown("---")
-st.markdown("🌿 Built with Streamlit | AI Plant Disease Detection")
+st.markdown("🌿 Built with Streamlit | AI Project by Sanju")
