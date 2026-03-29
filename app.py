@@ -33,7 +33,7 @@ class_names = list(treatments.keys())
 # -------------------------------
 # Streamlit UI
 # -------------------------------
-st.title("🌱 Plant Disease Detection & Treatment System")
+st.markdown("<h1 style='text-align: center; color: green;'>🌱 Plant Disease Detection</h1>", unsafe_allow_html=True)
 
 st.write("Upload a plant leaf image to detect disease and get treatment suggestions.")
 
@@ -50,14 +50,20 @@ if uploaded_file is not None:
     img_array = np.expand_dims(img_array, axis=0)
 
     # Prediction
-    with st.spinner("Analyzing image..."):
+    with st.spinner("Analyzing leaf... 🌿"):
         prediction = model.predict(img_array)
         class_index = np.argmax(prediction)
         disease = class_names[class_index]
 
+	confidence = np.max(prediction) * 100
+	st.info(f"🔍 Confidence: {confidence:.2f}%")
+if confidence < 70:
+    st.warning("⚠️ Prediction confidence is low. Try another image.")
+
     # Output
-    st.subheader(f"🦠 Predicted Disease: {disease}")
-    st.success(f"💊 Treatment: {treatments[disease]}")
+       clean_name = disease.replace("_", " ")
+       st.subheader(f"🦠 Predicted Disease: {clean_name}")
+       st.success(f"💊 Treatment: {treatments[disease]}")
 
 # -------------------------------
 # Footer
