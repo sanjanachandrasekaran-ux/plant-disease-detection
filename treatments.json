@@ -1,62 +1,152 @@
 {
   "Pepper__bell___Bacterial_spot": {
-    "treatment": "Remove infected leaves and apply copper-based fungicide.",
-    "fertilizer": "Use potassium-rich fertilizer to improve resistance."
+    "treatment": {
+      "en": "Remove infected leaves and apply copper-based fungicide.",
+      "ta": "பாதிக்கப்பட்ட இலைகளை அகற்றி செம்பு பூஞ்சைநாசினி பயன்படுத்தவும்."
+    },
+    "fertilizer": {
+      "en": "Use potassium-rich fertilizer to improve resistance.",
+      "ta": "நோய் எதிர்ப்பு அதிகரிக்க பொட்டாசியம் உரம் பயன்படுத்தவும்."
+    }
   },
   "Pepper__bell___healthy": {
-    "treatment": "No disease detected. Maintain proper watering and sunlight.",
-    "fertilizer": "Use balanced NPK fertilizer."
+    "treatment": {
+      "en": "No disease detected. Maintain proper watering and sunlight.",
+      "ta": "நோய் இல்லை. சரியான நீர்ப்பாசனம் மற்றும் வெளிச்சம் கொடுக்கவும்."
+    },
+    "fertilizer": {
+      "en": "Use balanced NPK fertilizer.",
+      "ta": "சமநிலை NPK உரம் பயன்படுத்தவும்."
+    }
   },
   "Potato__Late_blight": {
-    "treatment": "Use fungicide and remove infected plants immediately.",
-    "fertilizer": "Use phosphorus-rich fertilizer."
+    "treatment": {
+      "en": "Use fungicide and remove infected plants immediately.",
+      "ta": "பூஞ்சைநாசினி பயன்படுத்தி பாதிக்கப்பட்ட செடிகளை அகற்றவும்."
+    },
+    "fertilizer": {
+      "en": "Use phosphorus-rich fertilizer.",
+      "ta": "பாஸ்பரஸ் நிறைந்த உரம் பயன்படுத்தவும்."
+    }
   },
   "Potato___Early_blight": {
-    "treatment": "Apply fungicide and avoid overhead watering.",
-    "fertilizer": "Use nitrogen-rich fertilizer."
+    "treatment": {
+      "en": "Apply fungicide and avoid overhead watering.",
+      "ta": "பூஞ்சைநாசினி பயன்படுத்தி மேல் நீர்ப்பாசனம் தவிர்க்கவும்."
+    },
+    "fertilizer": {
+      "en": "Use nitrogen-rich fertilizer.",
+      "ta": "நைட்ரஜன் நிறைந்த உரம் பயன்படுத்தவும்."
+    }
   },
   "Potato___healthy": {
-    "treatment": "Plant is healthy. Maintain good soil and watering.",
-    "fertilizer": "Use balanced fertilizer regularly."
+    "treatment": {
+      "en": "Plant is healthy. Maintain good soil and watering.",
+      "ta": "செடி ஆரோக்கியமாக உள்ளது. நல்ல மண் மற்றும் நீர் பராமரிக்கவும்."
+    },
+    "fertilizer": {
+      "en": "Use balanced fertilizer regularly.",
+      "ta": "சமநிலை உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Bacterial_spot": {
-    "treatment": "Remove infected leaves and use copper sprays.",
-    "fertilizer": "Use potassium-rich fertilizer."
+    "treatment": {
+      "en": "Remove infected leaves and use copper sprays.",
+      "ta": "பாதிக்கப்பட்ட இலைகளை அகற்றி செம்பு தெளிப்பு பயன்படுத்தவும்."
+    },
+    "fertilizer": {
+      "en": "Use potassium-rich fertilizer.",
+      "ta": "பொட்டாசியம் உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Early_blight": {
-    "treatment": "Use fungicides and rotate crops yearly.",
-    "fertilizer": "Use nitrogen-rich fertilizer."
+    "treatment": {
+      "en": "Use fungicides and rotate crops yearly.",
+      "ta": "பூஞ்சைநாசினி பயன்படுத்தி பயிர் மாற்றம் செய்யவும்."
+    },
+    "fertilizer": {
+      "en": "Use nitrogen-rich fertilizer.",
+      "ta": "நைட்ரஜன் உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_healthy": {
-    "treatment": "Healthy plant. Continue proper care.",
-    "fertilizer": "Use balanced NPK fertilizer."
+    "treatment": {
+      "en": "Healthy plant. Continue proper care.",
+      "ta": "செடி ஆரோக்கியமாக உள்ளது. பராமரிப்பை தொடரவும்."
+    },
+    "fertilizer": {
+      "en": "Use balanced NPK fertilizer.",
+      "ta": "சமநிலை NPK உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Late_blight": {
-    "treatment": "Destroy infected plants and avoid wet leaves.",
-    "fertilizer": "Use phosphorus-rich fertilizer."
+    "treatment": {
+      "en": "Destroy infected plants and avoid wet leaves.",
+      "ta": "பாதிக்கப்பட்ட செடிகளை அழித்து ஈரமான இலைகளை தவிர்க்கவும்."
+    },
+    "fertilizer": {
+      "en": "Use phosphorus-rich fertilizer.",
+      "ta": "பாஸ்பரஸ் உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Leaf_Mold": {
-    "treatment": "Improve air circulation and apply fungicide.",
-    "fertilizer": "Use balanced fertilizer with micronutrients."
+    "treatment": {
+      "en": "Improve air circulation and apply fungicide.",
+      "ta": "காற்றோட்டத்தை அதிகரித்து பூஞ்சைநாசினி பயன்படுத்தவும்."
+    },
+    "fertilizer": {
+      "en": "Use balanced fertilizer with micronutrients.",
+      "ta": "சிறுதாதுக்கள் உள்ள உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Septoria_leaf_spot": {
-    "treatment": "Remove affected leaves and use fungicide.",
-    "fertilizer": "Use nitrogen and potassium mix."
+    "treatment": {
+      "en": "Remove affected leaves and use fungicide.",
+      "ta": "பாதிக்கப்பட்ட இலைகளை அகற்றி பூஞ்சைநாசினி பயன்படுத்தவும்."
+    },
+    "fertilizer": {
+      "en": "Use nitrogen and potassium mix.",
+      "ta": "நைட்ரஜன் மற்றும் பொட்டாசியம் கலவை உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato_Spider_mites_Two_spotted_spider_mite": {
-    "treatment": "Spray water or insecticidal soap.",
-    "fertilizer": "Use organic compost fertilizer."
+    "treatment": {
+      "en": "Spray water or insecticidal soap.",
+      "ta": "நீர் அல்லது பூச்சிக்கொல்லி சோப்பு தெளிக்கவும்."
+    },
+    "fertilizer": {
+      "en": "Use organic compost fertilizer.",
+      "ta": "இயற்கை உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato__Target_spot": {
-    "treatment": "Apply fungicide and remove infected leaves.",
-    "fertilizer": "Use potassium-rich fertilizer."
+    "treatment": {
+      "en": "Apply fungicide and remove infected leaves.",
+      "ta": "பூஞ்சைநாசினி பயன்படுத்தி பாதிக்கப்பட்ட இலைகளை அகற்றவும்."
+    },
+    "fertilizer": {
+      "en": "Use potassium-rich fertilizer.",
+      "ta": "பொட்டாசியம் உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato__Tomato_mosaic_virus": {
-    "treatment": "Remove infected plants and disinfect tools.",
-    "fertilizer": "Use balanced fertilizer to support growth."
+    "treatment": {
+      "en": "Remove infected plants and disinfect tools.",
+      "ta": "பாதிக்கப்பட்ட செடிகளை அகற்றி கருவிகளை சுத்தம் செய்யவும்."
+    },
+    "fertilizer": {
+      "en": "Use balanced fertilizer to support growth.",
+      "ta": "சமநிலை உரம் பயன்படுத்தவும்."
+    }
   },
   "Tomato__Tomato_YellowLeaf__Curl_Virus": {
-    "treatment": "Control whiteflies and remove infected plants.",
-    "fertilizer": "Use micronutrient-rich fertilizer."
+    "treatment": {
+      "en": "Control whiteflies and remove infected plants.",
+      "ta": "வெள்ளை ஈக்களை கட்டுப்படுத்தி பாதிக்கப்பட்ட செடிகளை அகற்றவும்."
+    },
+    "fertilizer": {
+      "en": "Use micronutrient-rich fertilizer.",
+      "ta": "சிறுதாதுக்கள் நிறைந்த உரம் பயன்படுத்தவும்."
+    }
   }
-}
+}s

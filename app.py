@@ -37,6 +37,9 @@ st.markdown("<h1 style='text-align: center; color: green;'>🌱 Plant Disease De
 
 st.write("Upload a plant leaf image to detect disease and get treatment suggestions.")
 
+# 🌐 Language selector
+language = st.selectbox("🌐 Select Language", ["English", "Tamil"])
+
 # Upload + Camera
 uploaded_file = st.file_uploader("📤 Upload a leaf image", type=["jpg", "png", "jpeg"])
 camera_image = st.camera_input("📸 Or take a photo")
@@ -67,6 +70,10 @@ if image is not None:
 
     clean_name = disease.replace("_", " ")
 
+    # Tamil label (optional)
+    if language == "Tamil":
+        clean_name = "நோய்: " + clean_name
+
     st.subheader(f"🦠 Predicted Disease: {clean_name}")
     st.info(f"🔍 Confidence: {confidence:.2f}%")
 
@@ -78,8 +85,11 @@ if image is not None:
     else:
         st.error("❌ Plant is Diseased")
 
-    st.success(f"💊 Treatment: {treatments[disease]['treatment']}")
-    st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer']}")
+    # Language logic
+    lang_code = "en" if language == "English" else "ta"
+
+    st.success(f"💊 Treatment: {treatments[disease]['treatment'][lang_code]}")
+    st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer'][lang_code]}")
 
 # -------------------------------
 # Footer
