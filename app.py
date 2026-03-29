@@ -40,31 +40,29 @@ st.write("Upload a plant leaf image to detect disease and get treatment suggesti
 uploaded_file = st.file_uploader("📤 Upload a leaf image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
-    # Show image
     img = Image.open(uploaded_file)
     st.image(img, caption="Uploaded Image", use_column_width=True)
 
-    # Preprocess image
     img = img.resize((128, 128))
     img_array = np.array(img) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
 
-    # Prediction
     with st.spinner("Analyzing leaf... 🌿"):
         prediction = model.predict(img_array)
         class_index = np.argmax(prediction)
         disease = class_names[class_index]
 
-	confidence = np.max(prediction) * 100
-	st.info(f"🔍 Confidence: {confidence:.2f}%")
-if confidence < 70:
-    st.warning("⚠️ Prediction confidence is low. Try another image.")
+        confidence = np.max(prediction) * 100
 
-    # Output
-       clean_name = disease.replace("_", " ")
-       st.subheader(f"🦠 Predicted Disease: {clean_name}")
-       st.success(f"💊 Treatment: {treatments[disease]}")
+    clean_name = disease.replace("_", " ")
 
+    st.subheader(f"🦠 Predicted Disease: {clean_name}")
+    st.info(f"🔍 Confidence: {confidence:.2f}%")
+
+    if confidence < 70:
+        st.warning("⚠️ Prediction confidence is low. Try another image.")
+
+    st.success(f"💊 Treatment: {treatments[disease]}")
 # -------------------------------
 # Footer
 # -------------------------------
