@@ -1,17 +1,62 @@
 {
-  "Pepper__bell___Bacterial_spot": "Remove infected leaves and apply copper-based fungicide.",
-  "Pepper__bell___healthy": "No disease detected. Maintain proper watering and sunlight.",
-  "Potato__Late_blight": "Use fungicide and remove infected plants immediately.",
-  "Potato___Early_blight": "Apply fungicide and avoid overhead watering.",
-  "Potato___healthy": "Plant is healthy. Maintain good soil and watering.",
-  "Tomato_Bacterial_spot": "Remove infected leaves and use copper sprays.",
-  "Tomato_Early_blight": "Use fungicides and rotate crops yearly.",
-  "Tomato_healthy": "Healthy plant. Continue proper care.",
-  "Tomato_Late_blight": "Destroy infected plants and avoid wet leaves.",
-  "Tomato_Leaf_Mold": "Improve air circulation and apply fungicide.",
-  "Tomato_Septoria_leaf_spot": "Remove affected leaves and use fungicide.",
-  "Tomato_Spider_mites_Two_spotted_spider_mite": "Spray water or insecticidal soap.",
-  "Tomato__Target_spot": "Apply fungicide and remove infected leaves.",
-  "Tomato__Tomato_mosaic_virus": "Remove infected plants and disinfect tools.",
-  "Tomato__Tomato_YellowLeaf__Curl_Virus": "Control whiteflies and remove infected plants."
+  "Pepper__bell___Bacterial_spot": {
+    "treatment": "Remove infected leaves and apply copper-based fungicide.",
+    "fertilizer": "Use potassium-rich fertilizer to improve resistance."
+  },
+  "Pepper__bell___healthy": {
+    "treatment": "No disease detected. Maintain proper watering and sunlight.",
+    "fertilizer": "Use balanced NPK fertilizer."
+  },
+  "Potato__Late_blight": {
+    "treatment": "Use fungicide and remove infected plants immediately.",
+    "fertilizer": "Use phosphorus-rich fertilizer."
+  },
+  "Potato___Early_blight": {
+    "treatment": "Apply fungicide and avoid overhead watering.",
+    "fertilizer": "Use nitrogen-rich fertilizer."
+  },
+  "Potato___healthy": {
+    "treatment": "Plant is healthy. Maintain good soil and watering.",
+    "fertilizer": "Use balanced fertilizer regularly."
+  },
+  "Tomato_Bacterial_spot": {
+    "treatment": "Remove infected leaves and use copper sprays.",
+    "fertilizer": "Use potassium-rich fertilizer."
+  },
+  "Tomato_Early_blight": {
+    "treatment": "Use fungicides and rotate crops yearly.",
+    "fertilizer": "Use nitrogen-rich fertilizer."
+  },
+  "Tomato_healthy": {
+    "treatment": "Healthy plant. Continue proper care.",
+    "fertilizer": "Use balanced NPK fertilizer."
+  },
+  "Tomato_Late_blight": {
+    "treatment": "Destroy infected plants and avoid wet leaves.",
+    "fertilizer": "Use phosphorus-rich fertilizer."
+  },
+  "Tomato_Leaf_Mold": {
+    "treatment": "Improve air circulation and apply fungicide.",
+    "fertilizer": "Use balanced fertilizer with micronutrients."
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "treatment": "Remove affected leaves and use fungicide.",
+    "fertilizer": "Use nitrogen and potassium mix."
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "treatment": "Spray water or insecticidal soap.",
+    "fertilizer": "Use organic compost fertilizer."
+  },
+  "Tomato__Target_spot": {
+    "treatment": "Apply fungicide and remove infected leaves.",
+    "fertilizer": "Use potassium-rich fertilizer."
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "treatment": "Remove infected plants and disinfect tools.",
+    "fertilizer": "Use balanced fertilizer to support growth."
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "treatment": "Control whiteflies and remove infected plants.",
+    "fertilizer": "Use micronutrient-rich fertilizer."
+  }
 }

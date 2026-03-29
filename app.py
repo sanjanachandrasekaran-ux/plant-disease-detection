@@ -54,15 +54,21 @@ if uploaded_file is not None:
 
         confidence = np.max(prediction) * 100
 
-    clean_name = disease.replace("_", " ")
+clean_name = disease.replace("_", " ")
 
-    st.subheader(f"🦠 Predicted Disease: {clean_name}")
-    st.info(f"🔍 Confidence: {confidence:.2f}%")
+st.subheader(f"🦠 Predicted Disease: {clean_name}")
+st.info(f"🔍 Confidence: {confidence:.2f}%")
 
-    if confidence < 70:
-        st.warning("⚠️ Prediction confidence is low. Try another image.")
+if confidence < 70:
+    st.warning("⚠️ Prediction confidence is low. Try another image.")
 
-    st.success(f"💊 Treatment: {treatments[disease]}")
+if "healthy" in disease.lower():
+    st.success("✅ Plant is Healthy")
+else:
+    st.error("❌ Plant is Diseased")
+
+st.success(f"💊 Treatment: {treatments[disease]['treatment']}")
+st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer']}")
 # -------------------------------
 # Footer
 # -------------------------------
