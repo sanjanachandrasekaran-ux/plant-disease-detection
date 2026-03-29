@@ -37,10 +37,22 @@ st.markdown("<h1 style='text-align: center; color: green;'>🌱 Plant Disease De
 
 st.write("Upload a plant leaf image to detect disease and get treatment suggestions.")
 
+# Upload + Camera
 uploaded_file = st.file_uploader("📤 Upload a leaf image", type=["jpg", "png", "jpeg"])
+camera_image = st.camera_input("📸 Or take a photo")
 
+# Decide which image to use
+image = None
 if uploaded_file is not None:
-    img = Image.open(uploaded_file)
+    image = uploaded_file
+elif camera_image is not None:
+    image = camera_image
+
+# -------------------------------
+# Prediction
+# -------------------------------
+if image is not None:
+    img = Image.open(image)
     st.image(img, caption="Uploaded Image", use_column_width=True)
 
     img = img.resize((128, 128))
@@ -51,24 +63,24 @@ if uploaded_file is not None:
         prediction = model.predict(img_array)
         class_index = np.argmax(prediction)
         disease = class_names[class_index]
-
         confidence = np.max(prediction) * 100
 
-clean_name = disease.replace("_", " ")
+    clean_name = disease.replace("_", " ")
 
-st.subheader(f"🦠 Predicted Disease: {clean_name}")
-st.info(f"🔍 Confidence: {confidence:.2f}%")
+    st.subheader(f"🦠 Predicted Disease: {clean_name}")
+    st.info(f"🔍 Confidence: {confidence:.2f}%")
 
-if confidence < 70:
-    st.warning("⚠️ Prediction confidence is low. Try another image.")
+    if confidence < 70:
+        st.warning("⚠️ Prediction confidence is low. Try another image.")
 
-if "healthy" in disease.lower():
-    st.success("✅ Plant is Healthy")
-else:
-    st.error("❌ Plant is Diseased")
+    if "healthy" in disease.lower():
+        st.success("✅ Plant is Healthy")
+    else:
+        st.error("❌ Plant is Diseased")
 
-st.success(f"💊 Treatment: {treatments[disease]['treatment']}")
-st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer']}")
+    st.success(f"💊 Treatment: {treatments[disease]['treatment']}")
+    st.info(f"🌿 Fertilizer: {treatments[disease]['fertilizer']}")
+
 # -------------------------------
 # Footer
 # -------------------------------
